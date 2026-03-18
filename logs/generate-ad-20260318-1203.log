@@ -1,0 +1,23 @@
+12:03:54 🦞 ClawRocket-AD Pro v1.0.0 生成器启动
+12:03:54 ============================================
+12:03:54 📝 生成配置头部...
+12:03:54 📝 添加自定义规则...
+12:03:54 📥 下载 ACL4SSR 国内域名列表...
+12:03:54   使用缓存: /Users/unclevv/.openclaw/workspace/ClawRocket/cache/acl4ssr/chinadomain.list
+12:03:54   ACL4SSR 下载成功
+12:03:54 📥 下载 dnsmasq-china-list...
+12:03:54   使用缓存: /Users/unclevv/.openclaw/workspace/ClawRocket/cache/dnsmasq-china/accelerated-domains.conf
+12:03:54   dnsmasq-china-list 下载成功
+12:03:54 📥 下载 ACL4SSR 广告规则...
+12:03:54   使用缓存: /Users/unclevv/.openclaw/workspace/ClawRocket/cache/adblock/banad.list
+12:03:54   ACL4SSR BanAD 下载成功
+12:03:54 📥 下载 ACL4SSR 应用广告规则...
+12:03:54   使用缓存: /Users/unclevv/.openclaw/workspace/ClawRocket/cache/adblock/banprogramad.list
+12:03:54   ACL4SSR BanProgramAD 下载成功
+12:03:54 📝 添加兜底规则...
+12:03:54 ✅ 生成完成: ClawRocket-AD-0318-1203.conf
+12:03:54    大小: 124K
+12:03:54    规则数: 3921
+12:03:54 📋 已复制到测试文件: ClawRocket-AD-Test.conf
+12:03:54 🕐 完成时间: 2026-03-18 12:03:54
+12:03:54 📝 日志: /Users/unclevv/.openclaw/workspace/ClawRocket/logs/generate-ad-20260318-1203.log

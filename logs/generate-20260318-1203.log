@@ -1,0 +1,17 @@
+12:03:47 🦞 ClawRocket Standard v1.0.0 生成器启动
+12:03:47 ============================================
+12:03:47 📝 生成配置头部...
+12:03:47 📝 添加自定义规则...
+12:03:47 📥 下载 ACL4SSR 国内域名列表...
+12:03:47   使用缓存: /Users/unclevv/.openclaw/workspace/ClawRocket/cache/acl4ssr/chinadomain.list
+12:03:47   ACL4SSR 下载成功
+12:03:47 📥 下载 dnsmasq-china-list...
+12:03:47   使用缓存: /Users/unclevv/.openclaw/workspace/ClawRocket/cache/dnsmasq-china/accelerated-domains.conf
+12:03:47   dnsmasq-china-list 下载成功
+12:03:47 📝 添加兜底规则...
+12:03:47 ✅ 生成完成: ClawRocket-0318-1203.conf
+12:03:47    大小:  72K
+12:03:47    规则数: 2283
+12:03:47 📋 已复制到测试文件: ClawRocket-Test.conf
+12:03:47 🕐 完成时间: 2026-03-18 12:03:47
+12:03:47 📝 日志: /Users/unclevv/.openclaw/workspace/ClawRocket/logs/generate-20260318-1203.log
