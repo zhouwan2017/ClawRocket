@@ -83,7 +83,7 @@ cat > "$OUTPUT_FILE.tmp" << CONFIGHEAD
 CONFIGHEAD
 
 # 提取标准版的 [General] 配置
-sed -n '/^\[General\]/,/^\[/p' "$LATEST_STANDARD" | sed '$d' >> "$OUTPUT_FILE.tmp"
+sed -n '/^\[General\]/,/^\[/p' "$LATEST_STANDARD" | head -n -1 >> "$OUTPUT_FILE.tmp"
 
 # 添加 MitM 配置
 cat >> "$OUTPUT_FILE.tmp" << 'MITMCONFIG'
