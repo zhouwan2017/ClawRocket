@@ -45,11 +45,11 @@ cat > "$OUTPUT_FILE" << CONFIGHEAD
 # - AI/大模型 v2.0: 国内直连 + 国际代理 + 镜像加速
 
 [General]
-# DNS 配置 - 使用 DoH 防污染（优化版）
-doh-server = https://dns.alidns.com/dns-query, https://doh.pub/dns-query
+# DNS 配置 - 使用 DoH 防污染
+doh-server = https://dns.alidns.com/dns-query, https://cloudflare-dns.com/dns-query
 
-# 传统 DNS 备用（国内优先）
-dns-server = 223.5.5.5, 119.29.29.29, 114.114.114.114
+# 传统 DNS 备用
+dns-server = 223.5.5.5, 119.29.29.29, 1.1.1.1, 8.8.8.8
 
 # IPv6 设置
 ipv6 = false
@@ -124,37 +124,7 @@ DOMAIN-SUFFIX,pingan.com,DIRECT
 DOMAIN-SUFFIX,icbc.com.cn,DIRECT
 DOMAIN-SUFFIX,bankofchina.com,DIRECT
 
-# ===== 优先级 3: 国内大模型（直连）=====
-# 阿里系
-DOMAIN-SUFFIX,qianwen.aliyun.com,DIRECT
-DOMAIN-SUFFIX,dashscope.aliyun.com,DIRECT
-DOMAIN-SUFFIX,modelscope.cn,DIRECT
-DOMAIN-SUFFIX,bailian.aliyun.com,DIRECT
-# 百度系
-DOMAIN-SUFFIX,wenxin.baidu.com,DIRECT
-DOMAIN-SUFFIX,cloud.baidu.com,DIRECT
-DOMAIN-SUFFIX,qianfan.baidubce.com,DIRECT
-# 讯飞系
-DOMAIN-SUFFIX,xinghuo.xfyun.cn,DIRECT
-DOMAIN-SUFFIX,iflytek.com,DIRECT
-# 智谱 AI
-DOMAIN-SUFFIX,chatglm.cn,DIRECT
-DOMAIN-SUFFIX,zhipuai.cn,DIRECT
-DOMAIN-SUFFIX,bigmodel.cn,DIRECT
-# 月之暗面 (Kimi)
-DOMAIN-SUFFIX,moonshot.cn,DIRECT
-DOMAIN-SUFFIX,kimi.moonshot.cn,DIRECT
-# 字节系
-DOMAIN-SUFFIX,bytedance.com,DIRECT
-DOMAIN-SUFFIX,volcengine.com,DIRECT
-DOMAIN-SUFFIX,doubao.com,DIRECT
-# 其他国内
-DOMAIN-SUFFIX,deepseek.com,DIRECT
-DOMAIN-SUFFIX,01.ai,DIRECT
-DOMAIN-SUFFIX,minimaxi.com,DIRECT
-DOMAIN-SUFFIX,baichuan-ai.com,DIRECT
-
-# ===== 优先级 4: 写作/协作软件 ===
+# ===== 优先级 3: 写作/协作软件 ===
 DOMAIN-SUFFIX,shimo.im,DIRECT
 DOMAIN-SUFFIX,yuque.com,DIRECT
 DOMAIN-SUFFIX,feishu.cn,DIRECT
@@ -175,32 +145,7 @@ DOMAIN-SUFFIX,lanhuapp.com,DIRECT
 DOMAIN-SUFFIX,mastergo.com,DIRECT
 DOMAIN-SUFFIX,js.design,DIRECT
 
-# ===== 优先级 5: 国际大模型（代理）=====
-# OpenAI (ChatGPT)
-DOMAIN-SUFFIX,openai.com,PROXY
-DOMAIN-SUFFIX,chat.openai.com,PROXY
-DOMAIN-SUFFIX,api.openai.com,PROXY
-DOMAIN-SUFFIX,auth.openai.com,PROXY
-# Anthropic (Claude)
-DOMAIN-SUFFIX,anthropic.com,PROXY
-DOMAIN-SUFFIX,claude.ai,PROXY
-DOMAIN-SUFFIX,api.anthropic.com,PROXY
-# Google (Gemini)
-DOMAIN-SUFFIX,gemini.google.com,PROXY
-DOMAIN-SUFFIX,ai.google.dev,PROXY
-DOMAIN-SUFFIX,generativelanguage.googleapis.com,PROXY
-DOMAIN-SUFFIX,aistudio.google.com,PROXY
-# Perplexity
-DOMAIN-SUFFIX,perplexity.ai,PROXY
-DOMAIN-SUFFIX,api.perplexity.ai,PROXY
-# Mistral
-DOMAIN-SUFFIX,mistral.ai,PROXY
-DOMAIN-SUFFIX,api.mistral.ai,PROXY
-# Meta (Llama)
-DOMAIN-SUFFIX,llama.com,PROXY
-DOMAIN-SUFFIX,meta.ai,PROXY
-
-# ===== 优先级 6: Apple TV+（美区账号精确代理）=====
+# ===== 优先级 4: Apple TV+（美区账号精确代理）=====
 DOMAIN,tv.apple.com,PROXY
 DOMAIN,uts-api.itunes.apple.com,PROXY
 DOMAIN,play-edge.itunes.apple.com,PROXY
@@ -212,7 +157,7 @@ DOMAIN,streaming.itunes.apple.com,PROXY
 DOMAIN,apple-tv-plus-press.apple.com,PROXY
 DOMAIN,tv.apple.com.edgekey.net,PROXY
 
-# ===== 优先级 7: 基础广告过滤 ===
+# ===== 优先级 5: 基础广告过滤 ===
 DOMAIN-SUFFIX,googleadservices.com,REJECT
 DOMAIN-SUFFIX,googlesyndication.com,REJECT
 DOMAIN-SUFFIX,google-analytics.com,REJECT
@@ -222,52 +167,24 @@ DOMAIN-SUFFIX,fbcdn.net,REJECT
 DOMAIN-SUFFIX,ads-twitter.com,REJECT
 DOMAIN-SUFFIX,analytics.twitter.com,REJECT
 
-# ===== 优先级 8: AI 开发工具（代理）=====
-# Cursor
+# ===== 优先级 6: AI/大模型 ===
+DOMAIN-SUFFIX,openai.com,PROXY
+DOMAIN-SUFFIX,chat.openai.com,PROXY
+DOMAIN-SUFFIX,api.openai.com,PROXY
+DOMAIN-SUFFIX,anthropic.com,PROXY
+DOMAIN-SUFFIX,claude.ai,PROXY
 DOMAIN-SUFFIX,cursor.sh,PROXY
-DOMAIN-SUFFIX,api.cursor.sh,PROXY
-# Continue
-DOMAIN-SUFFIX,continue.dev,PROXY
-# Windsurf
-DOMAIN-SUFFIX,windsurf.ai,PROXY
-# Replit
-DOMAIN-SUFFIX,replit.com,PROXY
-DOMAIN-SUFFIX,repl.it,PROXY
-# Google Colab
-DOMAIN-SUFFIX,colab.research.google.com,PROXY
-DOMAIN-SUFFIX,notebooks.googleusercontent.com,PROXY
-# Ollama
+DOMAIN-SUFFIX,perplexity.ai,PROXY
 DOMAIN-SUFFIX,ollama.com,PROXY
-DOMAIN-SUFFIX,ollama.ai,PROXY
-# LM Studio
 DOMAIN-SUFFIX,lmstudio.ai,PROXY
-
-# ===== 优先级 9: 模型/数据集托管（代理 + 镜像直连）=====
-# HuggingFace (主站代理)
 DOMAIN-SUFFIX,huggingface.co,PROXY
 DOMAIN-SUFFIX,huggingface.com,PROXY
-DOMAIN-SUFFIX,hf.co,PROXY
-DOMAIN-SUFFIX,hf.space,PROXY
-# HuggingFace 镜像 (直连加速)
+DOMAIN-SUFFIX,baichuan-ai.com,DIRECT
+DOMAIN-SUFFIX,xinghuo.xfyun.cn,DIRECT
+DOMAIN-SUFFIX,qianwen.aliyun.com,DIRECT
 DOMAIN-SUFFIX,hf-mirror.com,DIRECT
-DOMAIN-SUFFIX,huggingfacejs.com,DIRECT
-# ModelScope 魔搭社区 (直连)
-DOMAIN-SUFFIX,modelscope.cn,DIRECT
-DOMAIN-SUFFIX,modelscope.net,DIRECT
-# GitHub (代理)
-DOMAIN-SUFFIX,github.com,PROXY
-DOMAIN-SUFFIX,githubusercontent.com,PROXY
-DOMAIN-SUFFIX,github.io,PROXY
-DOMAIN-SUFFIX,raw.githubusercontent.com,PROXY
-DOMAIN-SUFFIX,api.github.com,PROXY
-# GitHub 镜像 (直连)
-DOMAIN-SUFFIX,ghproxy.com,DIRECT
-DOMAIN-SUFFIX,ghps.cc,DIRECT
-# JS 交付
-DOMAIN-SUFFIX,fastly.jsdelivr.net,PROXY
-DOMAIN-SUFFIX,cn.jsdelivr.net,DIRECT
 
-# ===== 优先级 10: 开发者工具 ===
+# ===== 优先级 7: 开发者工具 ===
 DOMAIN-SUFFIX,github.com,PROXY
 DOMAIN-SUFFIX,githubusercontent.com,PROXY
 DOMAIN-SUFFIX,github.io,PROXY
@@ -291,7 +208,7 @@ DOMAIN-SUFFIX,v2ex.com,DIRECT
 DOMAIN-SUFFIX,gitee.com,DIRECT
 DOMAIN-SUFFIX,gitcode.net,DIRECT
 
-# ===== 优先级 11: Apple 服务 ===
+# ===== 优先级 8: Apple 服务 ===
 DOMAIN-SUFFIX,icloud.com,DIRECT
 DOMAIN-SUFFIX,icloud.com.cn,DIRECT
 DOMAIN-SUFFIX,me.com,DIRECT
@@ -308,7 +225,7 @@ DOMAIN-SUFFIX,news.apple.com,PROXY
 DOMAIN-SUFFIX,arcade.apple.com,PROXY
 DOMAIN-SUFFIX,fitnessplus.apple.com,PROXY
 
-# ===== 优先级 12: 国民应用 ===
+# ===== 优先级 9: 国民应用 ===
 DOMAIN-SUFFIX,wechat.com,DIRECT
 DOMAIN-SUFFIX,weixin.qq.com,DIRECT
 DOMAIN-SUFFIX,wechatpay.com,DIRECT
@@ -339,11 +256,11 @@ CUSTOMRULES
 download_with_retry() {
     local url=$1
     local cache_file=$2
-    local max_retry=5
+    local max_retry=3
     local retry=0
     
     # 检查缓存（24小时内有效）
-    if [ -f "$cache_file" ] && [ $(($(date +%s) - $(stat -c %Y "$cache_file" 2>/dev/null || stat -f %m "$cache_file"))) -lt 172800 ]; then
+    if [ -f "$cache_file" ] && [ $(($(date +%s) - $(stat -c %Y "$cache_file" 2>/dev/null || stat -f %m "$cache_file"))) -lt 86400 ]; then
         log "  使用缓存: $cache_file"
         cat "$cache_file"
         return 0
@@ -351,7 +268,7 @@ download_with_retry() {
     
     while [ $retry -lt $max_retry ]; do
         local temp_output=$(mktemp)
-        if curl -sL --max-time 45 "$url" -o "$temp_output" 2>/dev/null; then
+        if curl -sL --max-time 30 "$url" -o "$temp_output" 2>/dev/null; then
             if [ -s "$temp_output" ]; then
                 # 保存到缓存
                 cp "$temp_output" "$cache_file"

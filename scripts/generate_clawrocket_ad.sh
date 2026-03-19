@@ -501,6 +501,14 @@ fi
 log "🕐 完成时间: $(date '+%Y-%m-%d %H:%M:%S')"
 log "📝 日志: $LOG_FILE"
 
+# 同步到 iCloud
+log "☁️ 同步到 iCloud..."
+if bash "$SCRIPT_DIR/sync_to_icloud.sh" >> "$LOG_FILE" 2>&1; then
+    log "  ✅ iCloud 同步完成"
+else
+    log "  ⚠️ iCloud 同步失败，但不影响主流程"
+fi
+
 # 输出结果供调用者使用
 echo ""
 echo "OUTPUT_FILE=$OUTPUT_FILE"
