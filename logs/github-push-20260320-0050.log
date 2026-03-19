@@ -1,0 +1,24 @@
+00:50:40 🦞 ClawRocket GitHub 推送脚本
+00:50:40 ==============================
+00:50:40 📋 检查配置文件...
+00:50:40   ✅ 标准版: ClawRocket-Test.conf
+00:50:40   ✅ Pro版: ClawRocket-AD-Test.conf
+00:50:40 📥 准备 GitHub 仓库...
+00:50:40   克隆仓库...
+00:50:42 📦 复制配置文件...
+00:50:42   标准版:  76K, 2341 规则
+00:50:42   Pro版:  84K, 2429 规则
+00:50:42 📝 Git 提交...
+00:50:42   📝 无变化，跳过提交
+00:50:42 
+00:50:42 🔗 GitHub 链接:
+00:50:42    https://github.com/zhouwan2017/ClawRocket
+00:50:42 
+00:50:42 🚀 CDN 链接（立即可用）:
+00:50:42    标准版: https://cdn.jsdelivr.net/gh/zhouwan2017/ClawRocket@main/ClawRocket.conf
+00:50:42    Pro版:  https://cdn.jsdelivr.net/gh/zhouwan2017/ClawRocket@main/ClawRocket-AD.conf
+00:50:42    标准版测试: https://cdn.jsdelivr.net/gh/zhouwan2017/ClawRocket@main/ClawRocket-Test.conf
+00:50:42    Pro版测试:  https://cdn.jsdelivr.net/gh/zhouwan2017/ClawRocket@main/ClawRocket-AD-Test.conf
+00:50:42 
+00:50:42 📝 日志: /Users/unclevv/Library/Mobile Documents/com~apple~CloudDocs/Clawbaby/05-CronJobs/ClawRocket/logs/github-push-20260320-0050.log
+00:50:42 ✅ 完成
