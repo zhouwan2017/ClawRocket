@@ -267,31 +267,47 @@ DOMAIN-SUFFIX,ghps.cc,DIRECT
 DOMAIN-SUFFIX,fastly.jsdelivr.net,PROXY
 DOMAIN-SUFFIX,cn.jsdelivr.net,DIRECT
 
-# ===== 优先级 10: 开发者工具 ===
-DOMAIN-SUFFIX,github.com,PROXY
-DOMAIN-SUFFIX,githubusercontent.com,PROXY
-DOMAIN-SUFFIX,github.io,PROXY
-DOMAIN-SUFFIX,raw.githubusercontent.com,PROXY
-DOMAIN-SUFFIX,ghproxy.com,DIRECT
-DOMAIN-SUFFIX,ghps.cc,DIRECT
-DOMAIN-SUFFIX,npmjs.com,PROXY
-DOMAIN-SUFFIX,registry.npmjs.org,PROXY
-DOMAIN-SUFFIX,npmmirror.com,DIRECT
-DOMAIN-SUFFIX,pypi.org,PROXY
-DOMAIN-SUFFIX,pypi.tuna.tsinghua.edu.cn,DIRECT
-DOMAIN-SUFFIX,mirrors.aliyun.com,DIRECT
-DOMAIN-SUFFIX,docker.io,PROXY
-DOMAIN-SUFFIX,registry-1.docker.io,PROXY
-DOMAIN-SUFFIX,registry.docker-cn.com,DIRECT
-DOMAIN-SUFFIX,stackoverflow.com,PROXY
-DOMAIN-SUFFIX,medium.com,PROXY
-DOMAIN-SUFFIX,dev.to,PROXY
-DOMAIN-SUFFIX,juejin.cn,DIRECT
-DOMAIN-SUFFIX,v2ex.com,DIRECT
-DOMAIN-SUFFIX,gitee.com,DIRECT
-DOMAIN-SUFFIX,gitcode.net,DIRECT
+# ===== 优先级 10: 云服务厂商（智能分流）=====
+# 阿里云（国内直连）
+DOMAIN-SUFFIX,aliyun.com,DIRECT
+DOMAIN-SUFFIX,alicloud.com,DIRECT
+DOMAIN-SUFFIX,aliyuncs.com,DIRECT
+DOMAIN-SUFFIX,alibabacloud.com,DIRECT
+DOMAIN-SUFFIX,hichina.com,DIRECT
+DOMAIN-SUFFIX,wanwang.com,DIRECT
+# 腾讯云（国内直连）
+DOMAIN-SUFFIX,tencent.com,DIRECT
+DOMAIN-SUFFIX,tencent-cloud.com,DIRECT
+DOMAIN-SUFFIX,tencentcloud.com,DIRECT
+DOMAIN-SUFFIX,qcloud.com,DIRECT
+DOMAIN-SUFFIX,myqcloud.com,DIRECT
+# 华为云（国内直连）
+DOMAIN-SUFFIX,huaweicloud.com,DIRECT
+DOMAIN-SUFFIX,hc-cdn.com,DIRECT
+DOMAIN-SUFFIX,hicloud.com,DIRECT
+# 百度智能云（国内直连）
+DOMAIN-SUFFIX,baidubce.com,DIRECT
+DOMAIN-SUFFIX,baidubos.com,DIRECT
+DOMAIN-SUFFIX,bcebos.com,DIRECT
+# 火山引擎（国内直连）
+DOMAIN-SUFFIX,volcengine.com,DIRECT
+DOMAIN-SUFFIX,volces.com,DIRECT
+# 京东云（国内直连）
+DOMAIN-SUFFIX,jdcloud.com,DIRECT
+# AWS（国际代理）
+DOMAIN-SUFFIX,amazonaws.com,PROXY
+DOMAIN-SUFFIX,console.aws.amazon.com,PROXY
+DOMAIN-SUFFIX,signin.aws.amazon.com,PROXY
+# Azure（国际代理）
+DOMAIN-SUFFIX,azure.com,PROXY
+DOMAIN-SUFFIX,portal.azure.com,PROXY
+DOMAIN-SUFFIX,login.microsoftonline.com,PROXY
+# Google Cloud（国际代理）
+DOMAIN-SUFFIX,cloud.google.com,PROXY
+DOMAIN-SUFFIX,console.cloud.google.com,PROXY
+DOMAIN-SUFFIX,googleapis.com,PROXY
 
-# ===== 优先级 11: Apple 服务 ===
+# ===== 优先级 11: 开发者工具 ===
 DOMAIN-SUFFIX,icloud.com,DIRECT
 DOMAIN-SUFFIX,icloud.com.cn,DIRECT
 DOMAIN-SUFFIX,me.com,DIRECT

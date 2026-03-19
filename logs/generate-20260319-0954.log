@@ -1,0 +1,39 @@
+09:54:12 🦞 ClawRocket Standard v1.0.0 生成器启动
+09:54:12 ============================================
+09:54:12 📝 生成配置头部...
+09:54:12 📝 添加自定义规则...
+09:54:12 📥 下载 ACL4SSR 国内域名列表...
+09:54:12   使用缓存: /Users/unclevv/.openclaw/workspace/ClawRocket/cache/acl4ssr/chinadomain.list
+09:54:12   ACL4SSR 下载成功
+09:54:12 📥 下载 dnsmasq-china-list...
+09:54:12   使用缓存: /Users/unclevv/.openclaw/workspace/ClawRocket/cache/dnsmasq-china/accelerated-domains.conf
+09:54:12   dnsmasq-china-list 下载成功
+09:54:12 📝 添加兜底规则...
+09:54:12 ✅ 生成完成: ClawRocket-0319-0954.conf
+09:54:12    大小:  76K
+09:54:12    规则数: 2341
+09:54:12 📋 已复制到测试文件: ClawRocket-Test.conf
+09:54:12 🕐 完成时间: 2026-03-19 09:54:12
+09:54:12 📝 日志: /Users/unclevv/.openclaw/workspace/ClawRocket/logs/generate-20260319-0954.log
+09:54:12 ☁️ 同步到 iCloud...
+09:54:12 🦞 ClawRocket iCloud 同步脚本
+09:54:12 ==============================
+09:54:12 📋 检查配置文件...
+09:54:12 📤 同步到 iCloud...
+09:54:12   ✅ 标准版: ClawRocket.conf
+09:54:12   ✅ Pro版: ClawRocket-AD.conf
+09:54:12   ✅ 标准版测试: ClawRocket-Test.conf
+09:54:12   ✅ Pro版测试: ClawRocket-AD-Test.conf
+09:54:12   ✅ 最新标准版: ClawRocket-0319-0954.conf
+09:54:12   ✅ 最新Pro版: ClawRocket-AD-0318-1203.conf
+09:54:12   ✅ README.md 已更新
+09:54:12 
+09:54:12 📁 iCloud 同步目录:
+09:54:12    /Users/unclevv/Library/Mobile Documents/com~apple~CloudDocs/Clawbaby/07-System/配置/ClawRocket
+09:54:12 
+09:54:12 📱 可在 iPhone/iPad 文件 App 中访问:
+09:54:12    文件 > iCloud Drive > Clawbaby > 07-System > 配置 > ClawRocket
+09:54:12 
+09:54:12 📝 日志: /Users/unclevv/.openclaw/workspace/ClawRocket/logs/icloud-sync-20260319-0954.log
+09:54:12 ✅ 同步完成
+09:54:12   ✅ iCloud 同步完成
