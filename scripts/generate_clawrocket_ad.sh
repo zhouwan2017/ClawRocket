@@ -262,7 +262,11 @@ cat "$RULES_DIR/03-direct.conf" >> "$OUTPUT_FILE.tmp"
 log "    - 04-proxy.conf (代理)"
 cat "$RULES_DIR/04-proxy.conf" >> "$OUTPUT_FILE.tmp"
 
-# 2.5 兜底规则
+# 2.5 通用 App 广告规则
+log "    - 06-app-ads.conf (通用 App 广告)"
+cat "$RULES_DIR/06-app-ads.conf" >> "$OUTPUT_FILE.tmp"
+
+# 2.6 兜底规则
 log "    - 05-final.conf (兜底)"
 cat "$RULES_DIR/05-final.conf" >> "$OUTPUT_FILE.tmp"
 
