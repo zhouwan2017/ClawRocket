@@ -1,6 +1,16 @@
 #!/bin/bash
 # 🦞 ClawRocket-AD Pro v1.0.0 - Shadowrocket 去广告强化版
 # MitM + URL Rewrite + 增强广告过滤
+#
+# 📅 生成时间：2026-03-20 23:52
+#
+# 📝 修改记录:
+# [2026-03-20 23:52] 修复规则顺序 - 使用模块化规则文件，确保 REJECT 在 DIRECT 之前
+# [2026-03-20 23:20] 添加规则顺序检查 - 防止广告过滤失效
+# [2026-03-20 23:18] 备份原脚本 - 生成前自动备份
+#
+# 🔗 GitHub: https://github.com/zhouwan2017/ClawRocket
+# 📦 规则文件：rules/02-reject.conf → rules/03-direct.conf → rules/04-proxy.conf → rules/05-final.conf
 
 set -e
 
@@ -117,19 +127,28 @@ localhost = 127.0.0.1
 
 MITMCONFIG
 
-# 提取标准版的 [Rule] 部分
-log "  叠加标准版规则..."
-sed -n '/^\[Rule\]/,$p' "$LATEST_STANDARD" >> "$OUTPUT_FILE.tmp"
+# 使用模块化规则文件（关键修复：确保 REJECT 在 DIRECT 之前）
+log "  叠加规则..."
 
-# 替换原文件
-mv "$OUTPUT_FILE.tmp" "$OUTPUT_FILE"
+# 定义规则目录
+RULES_DIR="$SCRIPT_DIR/../rules"
 
-# 添加增强广告过滤规则
+# 1. 先添加 [Rule] 标记
+echo "[Rule]" >> "$OUTPUT_FILE.tmp"
+
+# 2. 按顺序合并规则文件（REJECT → DIRECT → PROXY → FINAL）
+log "  合并规则文件..."
+
+# 2.1 广告过滤规则（优先匹配）
+log "    - 02-reject.conf (广告过滤)"
+cat "$RULES_DIR/02-reject.conf" >> "$OUTPUT_FILE.tmp"
+
+# 2.2 增强广告过滤规则（AD 版专属）
 log "  添加增强广告过滤规则..."
-cat >> "$OUTPUT_FILE" << 'ADRULES'
+cat >> "$OUTPUT_FILE.tmp" << 'ADRULES'
 
-# ===== 增强广告过滤（AD 版专属）=====
-# URL Rewrite - 拦截广告请求
+# ===== 增强广告过滤（AD 版专属 - 优先匹配）=====
+# URL Rewrite - 拦截广告请求（优先）
 URL-REJECT ^https?://[^/]*doubleclick\.net/.*
 URL-REJECT ^https?://[^/]*googleadservices\.com/.*
 URL-REJECT ^https?://[^/]*googlesyndication\.com/.*
@@ -234,6 +253,21 @@ DOMAIN-SUFFIX,wa.gtimg.com,REJECT
 DOMAIN-SUFFIX,bfshan.cn,REJECT
 
 ADRULES
+
+# 2.3 国内域名白名单
+log "    - 03-direct.conf (国内直连)"
+cat "$RULES_DIR/03-direct.conf" >> "$OUTPUT_FILE.tmp"
+
+# 2.4 代理规则
+log "    - 04-proxy.conf (代理)"
+cat "$RULES_DIR/04-proxy.conf" >> "$OUTPUT_FILE.tmp"
+
+# 2.5 兜底规则
+log "    - 05-final.conf (兜底)"
+cat "$RULES_DIR/05-final.conf" >> "$OUTPUT_FILE.tmp"
+
+# 替换原文件
+mv "$OUTPUT_FILE.tmp" "$OUTPUT_FILE"
 
 # 统计
 FILE_SIZE=$(du -h "$OUTPUT_FILE" | cut -f1)
