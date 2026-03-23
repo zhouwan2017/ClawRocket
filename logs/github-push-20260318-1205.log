@@ -1,0 +1,27 @@
+12:05:39 🦞 ClawRocket GitHub 推送脚本
+12:05:39 ==============================
+12:05:39 📋 检查配置文件...
+12:05:39   ✅ 标准版: ClawRocket-Test.conf
+12:05:39   ✅ Pro版: ClawRocket-AD-Test.conf
+12:05:39 📥 准备 GitHub 仓库...
+12:05:39   克隆仓库...
+12:05:40 ❌ 克隆失败，尝试初始化本地仓库...
+12:05:40 📦 复制配置文件...
+12:05:40   标准版:  72K, 2283 规则
+12:05:40   Pro版: 124K, 3921 规则
+12:05:40 📝 Git 提交...
+12:05:40 📤 推送到 GitHub...
+12:05:41   ⚠️ 推送失败，可能是权限问题
+12:05:41      请检查 SSH key 或 HTTPS 认证
+12:05:41 
+12:05:41 🔗 GitHub 链接:
+12:05:41    https://github.com/zhouwan2017/ClawRocket
+12:05:41 
+12:05:41 🚀 CDN 链接（立即可用）:
+12:05:41    标准版: https://cdn.jsdelivr.net/gh/zhouwan2017/ClawRocket@main/ClawRocket.conf
+12:05:41    Pro版:  https://cdn.jsdelivr.net/gh/zhouwan2017/ClawRocket@main/ClawRocket-AD.conf
+12:05:41    标准版测试: https://cdn.jsdelivr.net/gh/zhouwan2017/ClawRocket@main/ClawRocket-Test.conf
+12:05:41    Pro版测试:  https://cdn.jsdelivr.net/gh/zhouwan2017/ClawRocket@main/ClawRocket-AD-Test.conf
+12:05:41 
+12:05:41 📝 日志: /Users/unclevv/.openclaw/workspace/ClawRocket/logs/github-push-20260318-1205.log
+12:05:41 ✅ 完成

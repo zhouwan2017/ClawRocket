@@ -1,0 +1,20 @@
+13:43:49 🦞 ClawRocket iCloud 同步脚本
+13:43:49 ==============================
+13:43:49 📋 检查配置文件...
+13:43:49 📤 同步到 iCloud...
+13:43:49   ✅ 标准版: ClawRocket.conf
+13:43:49   ✅ Pro版: ClawRocket-AD.conf
+13:43:49   ✅ 标准版测试: ClawRocket-Test.conf
+13:43:49   ✅ Pro版测试: ClawRocket-AD-Test.conf
+13:43:49   ✅ 最新标准版: ClawRocket-0318-1203.conf
+13:43:49   ✅ 最新Pro版: ClawRocket-AD-0318-1203.conf
+13:43:49   ✅ README.md 已更新
+13:43:49 
+13:43:49 📁 iCloud 同步目录:
+13:43:49    /Users/unclevv/Library/Mobile Documents/com~apple~CloudDocs/Clawbaby/07-System/配置/ClawRocket
+13:43:50 
+13:43:50 📱 可在 iPhone/iPad 文件 App 中访问:
+13:43:50    文件 > iCloud Drive > Clawbaby > 07-System > 配置 > ClawRocket
+13:43:50 
+13:43:50 📝 日志: /Users/unclevv/.openclaw/workspace/ClawRocket/logs/icloud-sync-20260318-1343.log
+13:43:50 ✅ 同步完成
